@@ -12,8 +12,9 @@ buildscript {
 plugins {
     id "net.serenity-bdd.serenity-gradle-plugin" version "3.3.0"
     id 'java'
-    id 'eclipse'
     id 'idea'
+    id "io.freefair.lombok" version "6.5.0.3"
+
 }
 
 defaultTasks 'clean', 'test', 'aggregate'
@@ -30,7 +31,7 @@ ext {
     serenityCoreVersion = '3.3.0'
     junitVersion = '5.8.2'
     assertJVersion = '3.23.1'
-    lombokVersion = '1.18.24'
+//    lombokVersion = '1.18.24'
 }
 
 dependencies {
@@ -38,9 +39,9 @@ dependencies {
             "net.serenity-bdd:serenity-junit5:${serenityCoreVersion}",
             "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
             "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
-            "org.assertj:assertj-core:${assertJVersion}",
-            "org.projectlombok:lombok:${lombokVersion}",
-            "ch.qos.logback:logback-classic:${logbackVersion}"
+            "org.assertj:assertj-core:${assertJVersion}"
+//            "org.projectlombok:lombok:${lombokVersion}",
+//            "ch.qos.logback:logback-classic:${logbackVersion}"
 }
 
 test {
